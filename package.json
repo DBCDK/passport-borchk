@@ -8,10 +8,10 @@
     "cleardest": "rm -rf ./dist",
     "lint": "eslint ./src",
     "lint:checkstyle": "eslint ./src  -o report.xml -f checkstyle",
-    "test": "mocha --compilers js:babel/register src/__tests__ -R mocha-jenkins-reporter --timeout 5000",
+    "test": "mocha --compilers js:babel-core/register src/__tests__ -R mocha-jenkins-reporter --timeout 5000",
     "test:junit": "npm run test",
     "test:watch": "mocha --compilers js:babel/register src/__tests__ -w",
-    "watch": "npm run cleardest && babel ./src --watch -d dist --ignore __tests__ --retain-lines --plugins transform-es2015-modules-commonjs"
+    "watch": "npm run cleardest && babel ./src --watch -d dist --ignore __tests__ --retain-lines"
   },
   "repository": {
     "type": "git",
@@ -36,11 +36,9 @@
     "passport-strategy": "^1.0.0"
   },
   "devDependencies": {
-    "babel": "^6.0.15",
-    "babel-cli": "^6.1.2",
-    "babel-core": "^6.1.2",
+    "babel": "5.8.29",
+    "babel-core": "5.8.29",
     "babel-eslint": "^4.1.4",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.1.3",
     "chai": "^3.4.0",
     "eslint": "^1.8.0",
     "mocha": "^2.3.3",

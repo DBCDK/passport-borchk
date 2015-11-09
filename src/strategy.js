@@ -15,6 +15,7 @@ import lookup from './utils';
 export default class Strategy extends passport.Strategy {
   constructor(options, verify) {
     super();
+
     if (typeof options === 'function') {
       verify = options;
       options = {};

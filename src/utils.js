@@ -7,10 +7,10 @@ export default function lookup(obj, field) {
   var chain = field.split(']').join('').split('[');
   for (var i = 0, len = chain.length; i < len; i++) {
     var prop = obj[chain[i]];
-    if (typeof(prop) === 'undefined') {
+    if (typeof prop === 'undefined') {
       return null;
     }
-    if (typeof(prop) !== 'object') {
+    if (typeof prop !== 'object') {
       return prop;
     }
     obj = prop;
