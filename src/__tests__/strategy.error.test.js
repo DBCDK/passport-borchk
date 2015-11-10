@@ -9,11 +9,11 @@ chai.use(chaiPassportStrategy);
 describe('Strategy', () => {
 
   describe('encountering an error during verification', () => {
-    var strategy = new Strategy((agencyid, loanerid, pincode, done) => {
+    const strategy = new Strategy((agencyid, loanerid, pincode, done) => {
       done(new Error('something went wrong'));
     });
 
-    var err;
+    let err;
 
     before((done) => {
       chai.passport.use(strategy)
@@ -37,11 +37,11 @@ describe('Strategy', () => {
   });
 
   describe('encountering an exception during verification', () => {
-    var strategy = new Strategy((agencyid, loanerid, pincode, done) => {
+    const strategy = new Strategy((agencyid, loanerid, pincode, done) => {
       throw new Error('something went horribly wrong');
     });
 
-    var err;
+    let err;
 
     before((done) => {
       chai.passport.use(strategy)
