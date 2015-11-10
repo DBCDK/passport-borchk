@@ -37,7 +37,7 @@ describe('Strategy', () => {
   });
 
   describe('encountering an exception during verification', () => {
-    const strategy = new Strategy((agencyid, loanerid, pincode, done) => {
+    const strategy = new Strategy((agencyid, loanerid, pincode, done) => { // eslint-disable-line
       throw new Error('something went horribly wrong');
     });
 

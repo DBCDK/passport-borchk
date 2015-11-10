@@ -9,7 +9,7 @@ chai.use(chaiPassportStrategy);
 describe('Strategy', () => {
 
   describe('handling a request without a body, but no username and password, with message option to authenticate', function() {
-    const strategy = new Strategy((agencyid, loanerid, pincode, done) => {
+    const strategy = new Strategy((agencyid, loanerid, pincode, done) => { // eslint-disable-line 
       throw new Error('should not be called');
     });
 

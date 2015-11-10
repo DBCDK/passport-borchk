@@ -113,7 +113,7 @@ describe('Strategy', () => {
   });
 
   describe('handling a request without a body, but no username and password', () => {
-    const strategy = new Strategy((agencyid, loanerid, pincode, done) => {
+    const strategy = new Strategy((agencyid, loanerid, pincode, done) => { // eslint-disable-line
       throw new Error('should not be called');
     });
 
@@ -141,7 +141,7 @@ describe('Strategy', () => {
   });
 
   describe('handling a request without a body, but no password', () => {
-    const strategy = new Strategy((agencyid, loanerid, pincode, done) => {
+    const strategy = new Strategy((agencyid, loanerid, pincode, done) => { // eslint-disable-line
       throw new Error('should not be called');
     });
 
@@ -170,7 +170,7 @@ describe('Strategy', () => {
   });
 
   describe('handling a request without a body, but no username', () => {
-    const strategy = new Strategy((agencyid, loanerid, pincode, done) => {
+    const strategy = new Strategy((agencyid, loanerid, pincode, done) => { // eslint-disable-line
       throw new Error('should not be called');
     });
 
