@@ -21,7 +21,7 @@ export default class Strategy extends passport.Strategy {
       options = {};
     }
     if (!verify) {
-      throw new TypeError('LocalStrategy requires a verify callback');
+      throw new TypeError('BorchkStrategy requires a verify callback');
     }
 
     this._agencyidField = options.agencyidField || 'agencyid';
