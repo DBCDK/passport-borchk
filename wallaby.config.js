@@ -1,12 +1,7 @@
 'use strict';
 let babel = require('babel-core');
 
-module.exports = (wallaby) => {
-  var babelCompiler = wallaby.compilers.babel({
-    babel: babel,
-    presets: ['es2015']
-  });
-
+module.exports = () => {
   return {
     files: [
       'src/*.js',
@@ -18,9 +13,10 @@ module.exports = (wallaby) => {
       'src/**/*.test.js'
     ],
 
-
-    compilers: {
-      '**/*.js*': babelCompiler
+    preprocessors: {
+      '**/*.js': [
+        file => babel.transform(file.content, {sourceMaps: true})
+      ]
     },
 
     env: {
