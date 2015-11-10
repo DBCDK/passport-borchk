@@ -44,7 +44,7 @@ var Strategy = (function (_passport$Strategy) {
       options = {};
     }
     if (!verify) {
-      throw new TypeError('LocalStrategy requires a verify callback');
+      throw new TypeError('BorchkStrategy requires a verify callback');
     }
 
     this._agencyidField = options.agencyidField || 'agencyid';
@@ -72,10 +72,6 @@ var Strategy = (function (_passport$Strategy) {
       var agencyid = (0, _utils2['default'])(req.body, this._agencyidField) || (0, _utils2['default'])(req.query, this._agencyidField);
       var loanerid = (0, _utils2['default'])(req.body, this._loaneridField) || (0, _utils2['default'])(req.query, this._loaneridField);
       var pincode = (0, _utils2['default'])(req.body, this._pincodeField) || (0, _utils2['default'])(req.query, this._pincodeField);
-
-      console.log('agencyid', agencyid); // eslint-disable-line
-      console.log('loanerid', loanerid); // eslint-disable-line
-      console.log('pincode', pincode); // eslint-disable-line
 
       if (!agencyid || !loanerid || !pincode) {
         return this.fail({ message: options.badRequestMessage || 'Missing credentials' }, 400);
